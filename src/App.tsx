@@ -1,18 +1,28 @@
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import React, { useState } from 'react';
 import { Menu, X, Search, Bell, User, CreditCard, Smartphone, Wifi, Zap, Car, Home, ShoppingCart, Gamepad2, Gift, Plus, Mail, ArrowLeft, Building, Receipt, Star, ChevronDown, ChevronUp, ArrowRight, CheckCircle, AlertCircle, Info, Clock, Shield, Users, Plane, Flower2, GraduationCap, Ticket, Heart, ShoppingBag } from 'lucide-react';
-
+function Account() {
+  return <div style={{ padding: 24 }}>Здесь будет кабинет</div>;
+}
 function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const [email, setEmail] = useState('');
-  const [agreeToTerms, setAgreeToTerms] = useState(false);
-  const [currentPage, setCurrentPage] = useState('home');
-  const [currentService, setCurrentService] = useState<any>(null);
-  const [paymentData, setPaymentData] = useState({
-    accountNumber: '',
-    amount: '',
-    email: ''
-  });
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div style={{ padding: 24 }}>
+              <h1>Главная страница сайта</h1>
+              <Link to="/account">Перейти в кабинет</Link>
+            </div>
+          }
+        />
+        <Route path="/account" element={<Account />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const [currentStep, setCurrentStep] = useState(1);
   const [transferData, setTransferData] = useState({
