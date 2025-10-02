@@ -996,31 +996,31 @@ function HomeApp() {
               <p className="text-slate-600">Introdu adresa ta de e-mail pentru a te autentifica sau a te înregistra:</p>
             </div>
 
-            <div className="space-y-4">
-              <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
-               <input
-  type="email"
-  value={email}
-  onChange={(e) => setEmail(e.target.value)}
-  placeholder="Adresa de e-mail"
-  className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-/>
+          <div className="space-y-4">
+  <div className="relative">
+    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
+    <input
+      type="email"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      placeholder="Adresa de e-mail"
+      className="w-full pl-10 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+    />
+  </div>
 
-              </div>
+  <div className="flex items-start space-x-3">
+    <input
+      type="checkbox"
+      checked={agreeToTerms}
+      onChange={(e) => setAgreeToTerms(e.target.checked)}
+      className="mt-1"
+    />
+    <label className="text-sm text-slate-600">
+      Sunt de acord cu termenii și condițiile
+    </label>
+  </div>
+</div>
 
-              <div className="flex items-start space-x-3">
-                <input
-                  type="checkbox"
-                  id="terms"
-                  checked={agreeToTerms}
-                  onChange={(e) => setAgreeToTerms(e.target.checked)}
-                  className="mt-1 w-4 h-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500"
-                />
-                <label htmlFor="terms" className="text-sm text-slate-600">
-                  Sunt de acord cu <a href="#" className="text-blue-600 hover:underline">Termenii și Condițiile</a>
-                </label>
-              </div>
 
               <div className="flex space-x-3 pt-4">
                 <button onClick={() => setIsLoginModalOpen(false)} className="flex-1 py-3 px-4 border border-slate-300 rounded-lg text-slate-700 hover:bg-slate-50">
